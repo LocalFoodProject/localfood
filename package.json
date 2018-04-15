@@ -12,6 +12,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "coverage": "yarn run test -- --coverage"
+    "coverage":
+      "yarn run test -- --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.0"
   }
 }
