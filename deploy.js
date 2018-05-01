@@ -1,6 +1,6 @@
 const HDWalletProvider = require('truffle-hdwallet-provider');
 const Web3 = require('web3');
-const compiledFactory = require('./src/build/Projectfactory.json');
+const compiledFactory = require('./src/build/CampaignFactory.json');
 
 const provider = new HDWalletProvider(
   'junior naive security reveal wet stuff jaguar entire blush trigger museum vintage',
