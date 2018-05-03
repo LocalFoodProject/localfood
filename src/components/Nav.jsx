@@ -60,10 +60,9 @@ const AuthButton = withRouter(({ loggedIn, history }) => {
   ) : (
     <button
       className="bn pointer f6 f5-l link bg-animate black-80 hover-bg-light-green dib pa3 ph4-l"
-      onClick={() =>
-        auth
-          .signInWithPopup(googleAuthProvider)
-          .then(() => history.push('/dashboard'))
+      onClick={
+        () => auth.signInWithPopup(googleAuthProvider)
+        // .then(() => history.push('/dashboard'))
       }
     >
       Login

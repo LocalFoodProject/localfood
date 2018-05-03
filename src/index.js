@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
 import Loading from './components/Loading';
 import Footer from './components/Footer';
@@ -74,7 +74,11 @@ export default class Routes extends Component {
               <Switch>
                 <Route exact path="/" component={HomePage} />
                 <Route path="/project/:id" component={ProjectPage} />
-                <Route path="/dashboard" component={Dashboard} />
+                <PrivateRoute
+                  path="/dashboard"
+                  component={Dashboard}
+                  authed={this.state.user}
+                />
               </Switch>
             </main>
             <Footer />
@@ -84,6 +88,24 @@ export default class Routes extends Component {
     );
   }
 }
+
+const PrivateRoute = ({ component: Component, authed, ...rest }) => (
+  <Route
+    {...rest}
+    render={props =>
+      authed ? (
+        <Component {...props} />
+      ) : (
+        <Redirect
+          to={{
+            pathname: '/',
+            state: { from: props.location }
+          }}
+        />
+      )
+    }
+  />
+);
 
 ReactDOM.render(<Routes />, document.getElementById('root'));
 registerServiceWorker();
