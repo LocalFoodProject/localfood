@@ -1,11 +1,13 @@
 import React, { Component, Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
-import { Spin } from 'antd';
+import Loading from './components/Loading';
 import Footer from './components/Footer';
-
+import Logo from './images/logo.svg';
+import Nav from './components/Nav';
+import { auth } from './constants/firebase';
 require('tachyons');
 
 class DynamicImport extends Component {
@@ -25,38 +27,85 @@ class DynamicImport extends Component {
 }
 
 const HomePage = props => (
-  <DynamicImport load={() => import('./components/App')}>
-    {Component =>
-      Component === null ? <Spin size="large" /> : <Component {...props} />
-    }
+  <DynamicImport load={() => import('./pages/Landing')}>
+    {Component => (Component === null ? <Loading /> : <Component {...props} />)}
   </DynamicImport>
 );
 
 const ProjectPage = props => (
-  <DynamicImport load={() => import('./components/Project')}>
-    {Component =>
-      Component === null ? <Spin size="large" /> : <Component {...props} />
-    }
+  <DynamicImport load={() => import('./pages/Project')}>
+    {Component => (Component === null ? <Loading /> : <Component {...props} />)}
   </DynamicImport>
 );
 
+const Dashboard = props => (
+  <DynamicImport load={() => import('./pages/Dashboard')}>
+    {Component => (Component === null ? <Loading /> : <Component {...props} />)}
+  </DynamicImport>
+);
+
+export const Context = React.createContext();
+
 export default class Routes extends Component {
+  state = {};
+
+  componentDidMount() {
+    auth.onAuthStateChanged(user => this.setState({ user }));
+  }
+
   render() {
     return (
-      <BrowserRouter>
-        <Fragment>
-          <main>
-            <Switch>
-              <Route exact path="/" component={HomePage} />
-              <Route exact path="/project/:id" component={ProjectPage} />
-            </Switch>
-          </main>
-          <Footer />
-        </Fragment>
-      </BrowserRouter>
+      <Context.Provider value={{ state: this.state }}>
+        <BrowserRouter>
+          <Fragment>
+            <header className="bg-white black-80 tc pv4 avenir">
+              <img src={Logo} alt="The Local Food Project" className="w5 h5" />
+
+              <h1 className="mt2 mb0 baskerville i fw1 f1">
+                The Local Food Project
+              </h1>
+              <h2 className="mt2 mb0 f6 fw4 ttu tracked">
+                Our amazing subtitle
+              </h2>
+              <Nav />
+            </header>
+
+            <main className="mw7 center">
+              <Switch>
+                <Route exact path="/" component={HomePage} />
+                <Route path="/project/:id" component={ProjectPage} />
+                <PrivateRoute
+                  path="/dashboard"
+                  component={Dashboard}
+                  authed={this.state.user}
+                />
+              </Switch>
+            </main>
+            <Footer />
+          </Fragment>
+        </BrowserRouter>
+      </Context.Provider>
     );
   }
 }
+
+const PrivateRoute = ({ component: Component, authed, ...rest }) => (
+  <Route
+    {...rest}
+    render={props =>
+      authed ? (
+        <Component {...props} />
+      ) : (
+        <Redirect
+          to={{
+            pathname: '/',
+            state: { from: props.location }
+          }}
+        />
+      )
+    }
+  />
+);
 
 ReactDOM.render(<Routes />, document.getElementById('root'));
 registerServiceWorker();
