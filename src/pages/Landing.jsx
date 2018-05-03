@@ -1,53 +1,10 @@
 import React, { Component } from 'react';
-import Logo from '../images/logo.svg';
 import { Link } from 'react-router-dom';
-
 class App extends Component {
   render() {
     return (
       <div className="App">
         <section className="mw7 center">
-          <header class="bg-white black-80 tc pv4 avenir">
-            <img src={Logo} alt="The Local Food Project" class="w5 h5" />
-
-            <h1 class="mt2 mb0 baskerville i fw1 f1">The Local Food Project</h1>
-            <h2 class="mt2 mb0 f6 fw4 ttu tracked">Our amazing subtitle</h2>
-            <nav class="bt bb tc mw7 center mt4">
-              <Link
-                class="f6 f5-l link bg-animate black-80 hover-bg-light-green dib pa3 ph4-l"
-                to="/project/portfolio"
-              >
-                Login
-              </Link>
-              <Link
-                class="f6 f5-l link bg-animate black-80 hover-bg-light-pink dib pa3 ph4-l"
-                to="/project/about"
-              >
-                About
-              </Link>
-              <Link
-                class="f6 f5-l link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l"
-                to="/project/asdf"
-              >
-                Producer Sign up
-              </Link>
-
-              <Link
-                class="f6 f5-l link bg-animate black-80 hover-bg-light-blue dib pa3 ph4-l"
-                to="/project/shop"
-              >
-                Consumer Sign up
-              </Link>
-
-              <Link
-                class="f6 f5-l link bg-animate black-80 hover-bg-light-yellow dib pa3 ph4-l"
-                to="/project/contact"
-              >
-                Contact
-              </Link>
-            </nav>
-          </header>
-
           <article className="pv4 bt bb b--black-10 ph3 ph0-l">
             <div className="flex flex-column flex-row-ns">
               <div className="w-100 w-60-ns pr3-ns order-2 order-1-ns">
