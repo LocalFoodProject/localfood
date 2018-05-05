@@ -41,3 +41,24 @@ What are the geopolitical, cultural-social-economic factors that must be taken i
 The biggest added complexity will be from the technological barrier. Currently only 54% of the world’s population has access to internet. Stifling the ability for this to go mainstream even more is the fact that the adoption of cryptocurrencies as a whole globally is still less than 2%. While that metric may seem worrisome, this is analogous to the amount of email users in 1994. For global adoption to take place, we have to assist in the accessibility of technology and the internet for people all over the world.
 
 For now, we’d have to make it easy for a farmer to opt in to this model. Doing so would require an easy onboarding process, along with an automatic way for cryptoassets to be exchanged for said farmers local currency. It’d be important to educate users on the advantages of retaining some savings in the form of crypto, while at the same time giving them the option to do as they please. 
+
+_____
+
+Week 2: Business Model Validation
+
+Who are your clients/users?
+
+The Local Food Project users should be considered the whole, the community itself. We would like to classify them to three main roles:
+	Producers: e.g farmers who produce clean/safe foods
+	Consumers: who need clean/safe foods
+	Supporters: people who want to tighten the relationships between consumers and producers for good social / environmental impacts.
+Note that a person can play more than one role. For example, I can be both producer / consumer since to survive I cannot produce all the food I needed.
+
+Now, I would like to explain why we should consider them as the whole. 
+A group of sustainable farmers can produce foods and exchange foods among themselve. They just need to sell just-enough or redundant food to pay for electricity, gas and maintain their facility. Producers may not have motivation to serve consumers. 
+As a consumer I can continue to use cheap and convenient chemical agriculture products in supermarkets and nearby stores. It is neither clean nor good foods but the fact is that most of people in the world now eating those foods, and it too convenient to get. So if there is not a strong ugent from consumers like a mother worrying for her children health, consumers may not have enough motivation to discover alternative choices.
+
+As a supporter I would like to see more people moving toward no-chemical farming or even better natural farming techniques since beside producing clean/safe foods, it can become very cost-effective and sustainable system that can run on it own without outside supplements. Then it helps to sink carbon and reserve environment. I will help to move more resources to help sustainable farmers to grow their farms including introducing new consumers to the farms.
+
+From my point of view, consumers are the one who need to be more active in building relationships with producers and supporters are willing to help them. If a non-farmer-person is not self-motivated enough to move out of his comfort zone (supermarkets and nearby stores) to come to visit farms, learning about the good impacts of sustainable farming for him, his family and the whole society, he will not transform to be a consumer role. And if farmers don’t see that consumers appreciate what they are doing, they will not be motivated to produce more foods to serve more people.
+Building strong relationships between producers and consumers, bonding both parties by sharing both risks and rewards (mutual benefits) is the key to success. We can do that by educating, meeting, farm visiting, trust building and finally facilitating logistics to make the resource exchanging (money, foods, supplements, labors, volunteers …) seamlessly. 
